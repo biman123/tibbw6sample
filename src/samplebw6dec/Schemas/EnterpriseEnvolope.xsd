@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hif.framework/EnterpriseEnvolope" xmlns:tns="http://www.hif.framework/EnterpriseEnvolope" elementFormDefault="qualified">
+
+    <element name="EnterPriseEnvolope" type="tns:EnterPriseEnvolopeType"></element>
+
+    <complexType name="EnterPriseEnvolopeType">
+    	<sequence>
+    		<element name="EnterpriseHeader" type="tns:EnterpriseHeaderType" minOccurs="1" maxOccurs="1"></element>
+    		<element name="body" type="tns:bodytype" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="EnterpriseHeaderType">
+    	<sequence>
+    		<element name="TechnicalHeader"
+    			type="tns:TechnicalHeaderType" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="BusiessHeader" type="tns:BusiessHeaderType"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="RoutingProp" type="tns:RoutingPropType" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="bodytype">
+    	<sequence>
+    		<element name="Payload" minOccurs="0" maxOccurs="1" type="anySimpleType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="TechnicalHeaderType">
+    	<sequence>
+    		<element name="InterfaceId" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ComponentId" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="InterfaceName" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="SourceTransactionId" type="string"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="TargetTransactionId" type="string"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="Enviroment" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="CorrelationId" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="Timestamp" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="BusiessHeaderType">
+    	<sequence>
+    		<element name="KeyValuePair" type="tns:KeyValuePairType" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="CustomHeaderType">
+    	<sequence>
+    		<element name="KeyValuePair" type="tns:KeyValuePairType" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="KeyValuePairType">
+    	<sequence>
+    		<element name="Key" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="value" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="RoutingPropType">
+    	<sequence>
+    		<element name="KeyValuePair" type="tns:KeyValuePairType" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>

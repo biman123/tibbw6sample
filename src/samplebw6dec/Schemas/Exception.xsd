@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hif.framework/Exception" xmlns:tns="http://www.hif.framework/Exception" elementFormDefault="qualified">
+
+    <element name="Exception" type="tns:ExceptionType"></element>
+
+    <complexType name="ExceptionType">
+    	<sequence>
+    		<element name="ErrorCode" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ErrorMsg" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ErrorDesc" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ErrorType" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ErrorSeverity" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ProcessStack" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="StackTrace" type="string" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

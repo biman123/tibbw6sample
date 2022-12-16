@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:EnterpriseEnvolope="http://www.hif.framework/EnterpriseEnvolope" xmlns:InputSource="http://www.tibco.com/InputSource/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_R6BtEPY_Eeq-y4T7PWLj-Q" targetNamespace="http://tns.tibco.com/bw/composite/samplebw6dec" name="samplebw6dec" compositeext:version="1.0.0" compositeext:formatVersion="2">
+ <sca:service xmi:id="_-TvKYEYIEeu_5K-FlJgVag" name="resttorest" promote="ComponentRESTToREST/resttorest">
+    <sca:interface.wsdl xmi:id="_-T6wkEYIEeu_5K-FlJgVag" interface="http://xmlns.example.com/20201224222539PLT#wsdl.interface(resttorest)" scaext:wsdlLocation="../Processes/samplebw6dec/RESTToREST.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_-UEhkEYIEeu_5K-FlJgVag" name="RestService" path="/resttorest" docBasePath="http://localhost:7777/samplebw6dec" docResourcePath="Resource1" basePath="/" connector="samplebw6dec.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/samplebw6dec.RESTToREST-Resource1.json">
+      <operation xmi:id="_-UPgsEYIEeu_5K-FlJgVag" operationName="get" nickname="get-resttorest" httpMethod="GET" notes="getResource1" responseStyle="element" outputPartName="item">
+        <parameters xmi:id="_7z64AEYTEeu_5K-FlJgVag">
+          <parameterMapping xmi:id="_7z8GIEYTEeu_5K-FlJgVag" parameterName="customerid" parameterType="Query" dataType="string"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_-UZRsEYIEeu_5K-FlJgVag"/>
+      <advancedConfig xmi:id="_-UEhkUYIEeu_5K-FlJgVag" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_-UPgsUYIEeu_5K-FlJgVag" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_SerSQPY_Eeq-y4T7PWLj-Q" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Se24cPY_Eeq-y4T7PWLj-Q" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Se7w8PY_Eeq-y4T7PWLj-Q" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SfACYPY_Eeq-y4T7PWLj-Q" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SfET0PY_Eeq-y4T7PWLj-Q" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SfJMUPY_Eeq-y4T7PWLj-Q" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_SfNdwPY_Eeq-y4T7PWLj-Q" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Wy_nIPY_Eeq-y4T7PWLj-Q" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_WzD4kPY_Eeq-y4T7PWLj-Q" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_WzGU0PY_Eeq-y4T7PWLj-Q" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0BjOUPwZEeqar4ioI62mgA" name="/framework/hiftransformation" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_12k2QPwZEeqar4ioI62mgA" name="/framework/customtransformation" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2CBRQPwZEeqar4ioI62mgA" name="/framework/hifroutingflag" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2J6pAPwZEeqar4ioI62mgA" name="/framework/customroutingflag" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_KTtYcPyAEeqvj_sW4noIoA" name="/framework/cleloggingqueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Nd41cPyAEeqvj_sW4noIoA" name="/framework/cleerrorqueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_teE0cPyAEeqvj_sW4noIoA" name="/framework/INFO" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tgrcgPyAEeqvj_sW4noIoA" name="/framework/ERROR" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_SOtqsPyBEeqvj_sW4noIoA" name="/framework/maxsession" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_YVwhcPyBEeqvj_sW4noIoA" name="/framework/output.queue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sRpnQEHREeuU_8VwsM7CEw" name="/framework/contextpath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wJI2MEHREeuU_8VwsM7CEw" name="/framework/pathspec" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xj05QEHWEeuU_8VwsM7CEw" name="/framework/InputQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_nioPMEHYEeuU_8VwsM7CEw" name="/framework/Filepath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_AKLMsEHZEeuU_8VwsM7CEw" name="/framework/Targetfilepath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_LQReAAuMEeusdOB6KIli-g" name="/cle/TransactionType" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_MisvMAuMEeusdOB6KIli-g" name="/cle/TransactionDomain" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_MkNyIAuMEeusdOB6KIli-g" name="/cle/EntryLevel" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_bp9pQAuMEeusdOB6KIli-g" name="/cle/ExitLevel" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_br7YIAuMEeusdOB6KIli-g" name="/cle/ErrorLevel" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_h7OzAAuMEeusdOB6KIli-g" name="/cle/ProcessName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oi2nQAuMEeusdOB6KIli-g" name="/cle/OperationName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_hjsa8AvHEeuRm4Pia1e0Rw" name="/EMSConnection/JNDIContextfactory" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_laRq8AvHEeuRm4Pia1e0Rw" name="/EMSConnection/JNDIURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lfEEUAvHEeuRm4Pia1e0Rw" name="/EMSConnection/JNDIQueueConnectionFactory" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ljBXQAvHEeuRm4Pia1e0Rw" name="/EMSConnection/JNDITopicConnectionFactory" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lmPDUAvHEeuRm4Pia1e0Rw" name="/EMSConnection/UserName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lpd9gAvHEeuRm4Pia1e0Rw" name="/EMSConnection/Password" type="property:password" scaext:simpleValue="#!8UCLqhmXAgFMRJFMH0D06A==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xrascAvHEeuRm4Pia1e0Rw" name="/EMSConnection/Providerurl" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_pYDfwEHYEeuU_8VwsM7CEw" name="/EMSConnection/maxsession" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xFGgcEHXEeuU_8VwsM7CEw" name="/http/TargetHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xH1rYEHXEeuU_8VwsM7CEw" name="/http/TargetPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_BXslMEHYEeuU_8VwsM7CEw" name="/http/Method" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_BbguMEHYEeuU_8VwsM7CEw" name="/http/RequestURI" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_2kZgIEYIEeu_5K-FlJgVag" name="ComponentRESTToREST" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2kaHMEYIEeu_5K-FlJgVag" processName="samplebw6dec.RESTToREST"/>
+    <sca:service xmi:id="_-TqR4EYIEeu_5K-FlJgVag" name="resttorest">
+      <sca:interface.wsdl xmi:id="_-TsHEEYIEeu_5K-FlJgVag" interface="http://xmlns.example.com/20201224222539PLT#wsdl.interface(resttorest)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

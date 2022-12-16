@@ -1,0 +1,137 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Resource1",
+    "description" : "Resource1 service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/resttorest" : {
+      "get" : {
+        "summary" : "getResource1",
+        "description" : "getResource1",
+        "operationId" : "get-resttorest",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "customerid",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a EnterPriseEnvolope to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/EnterPriseEnvolope"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "EnterpriseHeader" : {
+      "type" : "object",
+      "properties" : {
+        "TechnicalHeader" : {
+          "$ref" : "#/definitions/TechnicalHeader"
+        },
+        "BusiessHeader" : {
+          "$ref" : "#/definitions/BusiessHeader"
+        },
+        "RoutingProp" : {
+          "$ref" : "#/definitions/RoutingProp"
+        }
+      }
+    },
+    "TechnicalHeader" : {
+      "type" : "object",
+      "properties" : {
+        "InterfaceId" : {
+          "type" : "string"
+        },
+        "ComponentId" : {
+          "type" : "string"
+        },
+        "InterfaceName" : {
+          "type" : "string"
+        },
+        "SourceTransactionId" : {
+          "type" : "string"
+        },
+        "TargetTransactionId" : {
+          "type" : "string"
+        },
+        "Enviroment" : {
+          "type" : "string"
+        },
+        "CorrelationId" : {
+          "type" : "string"
+        },
+        "Timestamp" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RoutingProp" : {
+      "type" : "object",
+      "properties" : {
+        "KeyValuePair" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/KeyValuePair",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "KeyValuePair" : {
+      "type" : "object",
+      "properties" : {
+        "Key" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "EnterPriseEnvolope" : {
+      "type" : "object",
+      "required" : [ "EnterpriseHeader", "body" ],
+      "properties" : {
+        "EnterpriseHeader" : {
+          "$ref" : "#/definitions/EnterpriseHeader"
+        },
+        "body" : {
+          "$ref" : "#/definitions/body"
+        }
+      }
+    },
+    "BusiessHeader" : {
+      "type" : "object",
+      "properties" : {
+        "KeyValuePair" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/KeyValuePair",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "body" : {
+      "type" : "object",
+      "properties" : {
+        "Payload" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

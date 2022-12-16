@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/T1608829244681Converted/JsonSchema" xmlns:tns="/T1608829244681Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="InternalCustomer" type="tns:InternalCustomer"/>
+    <xs:complexType name="InternalCustomer">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="customername" type="xs:string"/>
+            <xs:element minOccurs="0" name="customerid" type="xs:string"/>
+            <xs:element minOccurs="0" name="Addressline1" type="xs:string"/>
+            <xs:element minOccurs="0" name="Addressline2" type="xs:string"/>
+            <xs:element minOccurs="0" name="state" type="xs:string"/>
+            <xs:element minOccurs="0" name="city" type="xs:string"/>
+            <xs:element minOccurs="0" name="countryname" type="xs:string"/>
+            <xs:element minOccurs="0" name="countrycode" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

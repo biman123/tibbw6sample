@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:tns="http://cle/common/xsd/v1_0_0_0/AuditLogService"
+	 targetNamespace="http://cle/common/xsd/v1_0_0_0/AuditLogService"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<complexType name="LogMsgCollectionType">
+		<sequence>
+			<element ref="tns:LogMsgRequest" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="LogMsgRequestType">
+		<sequence>
+			<element name="LogMsgHeader" type="tns:LogMsgHeader" minOccurs="0"/>
+			<element name="LogMsgDescription" type="tns:LogMsgDescription" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="LogMsgHeader">
+		<sequence>
+			<element name="InterfaceId" type="string"/>
+			<element name="TransactionType" type="string" minOccurs="0"/>
+			<element name="TransactionDomain" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="LogMsgDescription">
+		<sequence>
+			<element name="LogLevel" type="string" minOccurs="0"/>
+			<element name="GeneralLogMsg" type="string"/>
+			<element name="Status" type="string"/>
+			<element name="TransactionID" type="string"/>
+			<element name="ProcessName" type="string" minOccurs="0"/>
+			<element name="LogCorrelationID" type="string" minOccurs="0"/>
+			<element name="LogTimeStamp" type="dateTime"/>
+			<element name="OperationName" type="string" minOccurs="1" />
+			<element name="Payload" type="string" minOccurs="0"/>
+			<element name="BusinessKeys" type="tns:Item" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="Item">
+		<sequence>
+			<element name="Name" type="string"/>
+			<element name="Value" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="LogMsgCollection" type="tns:LogMsgCollectionType"/>
+	<element name="LogMsgRequest" type="tns:LogMsgRequestType"/>
+</schema>

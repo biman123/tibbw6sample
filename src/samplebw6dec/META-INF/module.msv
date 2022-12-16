@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="uuid" type="{http://www.example.org/uuid}uuid" initialValueMode="none"/>
+    <moduleSharedVariable name="Enterpriseenvolope" type="{http://www.hif.framework/EnterpriseEnvolope}EnterPriseEnvolope" initialValueMode="none"/>
+    <moduleSharedVariable name="Payload" type="{http://www.hif.framework/Payload}Payload" initialValueMode="none"/>
+  </moduleSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/uuid" location="../Schemas/uuid.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.hif.framework/EnterpriseEnvolope" location="../Schemas/EnterpriseEnvolope.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.hif.framework/Payload" location="../Schemas/Payload.xsd"/>
+</msv:DocumentRoot>

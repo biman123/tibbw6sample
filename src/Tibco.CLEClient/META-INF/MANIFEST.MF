@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tibco CLEClient Module
+Bundle-SymbolicName: Tibco.CLEClient
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-Edition: bwcf,bwe
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.file)",
+ com.tibco.bw.palette; filter:="(name=bw.jms)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.jmsconnection)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.jndiconfiguration)"
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Provide-Capability: com.tibco.bw.module; name="Tibco.CLEClient"; version:Version="1.0.0",
+ com.tibco.bw.schemas; ns="http://cle/common/xsd/v1_0_0_0/AuditLogService",
+ com.tibco.bw.schemas; ns="http://cle/common/xsd/v1_0_0_0/ErrorHandlingService",
+ com.tibco.bw.resources; name="JMS",
+ com.tibco.bw.resources; name="JNDI",
+ com.tibco.bw.processes; name="tibco.cleclient"
+TIBCO-BW-Version: 2.5.3 V26 2020-05-15

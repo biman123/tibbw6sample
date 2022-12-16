@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hif.framework/Externalcustomer" xmlns:tns="http://www.hif.framework/Externalcustomer" elementFormDefault="qualified">
+
+    <element name="ExternalCustomer" type="tns:ExternalCustomer"></element>
+
+    <complexType name="ExternalCustomer">
+    	<sequence>
+    		<element name="ExternalCustomername" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="Externalcustomerid" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="Externalcustomeradreesline1" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="Externalcustomeradreesline2" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="ExternalCustomerstate" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="Externalcustomercity" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="Externalcustomercountryname" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="ExternalCustomercounrycode" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

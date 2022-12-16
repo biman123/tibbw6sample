@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hif.framework/Payload" xmlns:tns="http://www.hif.framework/Payload" elementFormDefault="qualified">
+
+    <element name="Payload" type="tns:PayloadType"></element>
+
+    <complexType name="PayloadType">
+    	<sequence>
+    		<element name="payload" minOccurs="0"
+    			maxOccurs="1" type="anySimpleType">
+            </element>
+            <element name="hiftransform" type="boolean" minOccurs="0" maxOccurs="1">
+    		</element>
+            <element name="customtransform" type="boolean" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="hifrouting" type="boolean" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="customrouting" type="boolean" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+</schema>

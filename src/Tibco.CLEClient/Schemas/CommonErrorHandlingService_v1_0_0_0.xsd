@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cle/common/xsd/v1_0_0_0/ErrorHandlingService" xmlns:xs="http://cle/common/xsd/v1_0_0_0/EmailMsgService" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://cle/common/xsd/v1_0_0_0/ErrorHandlingService">
+	<complexType name="ErrorMsgCollectionType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" ref="tns:ErrorMsgRequest"/>
+			<!--<element name="GenerateEmailRequest" type="xs:GenerateEmailRequestType" minOccurs="0" maxOccurs="1">
+			</element>-->
+		</sequence>
+	</complexType>
+	<complexType name="ErrorMsgRequest">
+		<sequence>
+			<element minOccurs="0" name="ErrorMsgHeader" type="tns:ErrorMsgHeader"/>
+			<element minOccurs="0" name="ErrorMessageDesc" type="tns:ErrorMessageDesc"/>
+		</sequence>
+	</complexType>
+	<complexType name="ErrorMsgHeader">
+		<sequence>
+			<element name="InterfaceID" type="string"/>
+			<element minOccurs="0" name="TransactionType" type="string"/>
+			<element minOccurs="0" name="TransactionDomain" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="ErrorMessageDesc">
+		<sequence>
+			<element minOccurs="0" name="ErrorCategory">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Application Exception"></enumeration>
+						<enumeration value="System Exception"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element minOccurs="0" name="ErrorSeverity">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="HIGH"></enumeration>
+						<enumeration value="MEDIUM"></enumeration>
+						<enumeration value="LOW"></enumeration>
+						<enumeration value="FATAL"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element minOccurs="0" name="ErrorCode" type="string"/>
+			<element minOccurs="0" name="ErrorDescription" type="string"/>
+			<element minOccurs="0" name="ErrorStack" type="string"/>
+			<element name="GeneralErrorMsg" type="string"/>
+			<element minOccurs="0" name="ProcessStack" type="string"/>
+			<element name="TransactionID" type="string"/>
+			<element minOccurs="0" name="ProcessName" type="string"/>
+			<element minOccurs="0" name="CorrelationID" type="string"/>
+			<element name="ErrorTimeStamp" type="dateTime"/>
+			<element minOccurs="1" name="OperationName" type="string"/>
+			<element minOccurs="0" name="Payload" type="string"/>
+			<element maxOccurs="unbounded" minOccurs="0" name="BusinessKeys" type="tns:Item"/>
+		</sequence>
+	</complexType>
+	<complexType name="Item">
+		<sequence>
+			<element name="Name" type="string"/>
+			<element name="Value" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="ErrorMsgRequest" type="tns:ErrorMsgRequest"/>
+</schema>
